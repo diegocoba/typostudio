@@ -1872,7 +1872,7 @@ export type CreateContactoMutation = (
 
 export const FeaturedServicesDocument = gql`
     query featuredServices {
-  services {
+  services(sort: "id:asc") {
     id
     name
     slug
