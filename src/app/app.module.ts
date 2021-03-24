@@ -22,6 +22,7 @@ import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkComponent } from './pages/service/service-work/service-work.component';
 import { SingleContentComponent } from './pages/single-content/single-content.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -53,7 +54,9 @@ import { SingleContentComponent } from './pages/single-content/single-content.co
     GraphQLModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide : LocationStrategy , useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
